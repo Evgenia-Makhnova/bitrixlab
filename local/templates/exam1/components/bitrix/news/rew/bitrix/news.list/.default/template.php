@@ -12,6 +12,10 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
+<?if($arParams["DISPLAY_TOP_PAGER"]):?>
+	<?=$arResult["NAV_STRING"]?><br />
+<?endif;?>
 <?foreach($arResult["ITEMS"] as $arItem):
 if(isset($arItem["PREVIEW_PICTURE"]["SRC"])) {
 	$src = $arItem["PREVIEW_PICTURE"]["SRC"];
@@ -39,3 +43,7 @@ if(isset($arItem["PREVIEW_PICTURE"]["SRC"])) {
 </div>
 </div>
 <?endforeach;?>
+
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+	<br /><?=$arResult["NAV_STRING"]?>
+<?endif;?>

@@ -2,9 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-	"",
-	Array(
+	"bitrix:catalog", 
+	".default", 
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
@@ -27,7 +27,8 @@ $APPLICATION->SetTitle("Продукция");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array(),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "H",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -35,7 +36,14 @@ $APPLICATION->SetTitle("Продукция");
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
 		"DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-		"DETAIL_PROPERTY_CODE" => array(0=>"SIZE",1=>"S_SIZE",2=>"ARTNUMBER",3=>"MATERIAL",4=>"MANUFACTURER",5=>"",),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "SIZE",
+			1 => "S_SIZE",
+			2 => "ARTNUMBER",
+			3 => "MATERIAL",
+			4 => "MANUFACTURER",
+			5 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_SHOW_PICTURE" => "Y",
 		"DETAIL_SHOW_POPULAR" => "Y",
@@ -58,7 +66,8 @@ $APPLICATION->SetTitle("Продукция");
 		"IBLOCK_TYPE" => "news",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "1",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -71,7 +80,10 @@ $APPLICATION->SetTitle("Продукция");
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false}]",
-		"LIST_PROPERTY_CODE" => array(0=>"PRICECURRENCY",1=>"",),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "PRICECURRENCY",
+			1 => "",
+		),
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -92,7 +104,9 @@ $APPLICATION->SetTitle("Продукция");
 		"PAGER_TITLE" => "Продукция",
 		"PAGE_ELEMENT_COUNT" => "10",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRICE_CODE" => array(),
+		"PRICE_CODE" => array(
+			0 => "PRICE",
+		),
 		"PRICE_VAT_INCLUDE" => "N",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -112,7 +126,6 @@ $APPLICATION->SetTitle("Продукция");
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/products/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_ID#/#ELEMENT_ID#/","section"=>"#SECTION_ID#/","sections"=>"","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -138,6 +151,15 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
-		"USE_STORE" => "N"
-	)
+		"USE_STORE" => "N",
+		"COMPONENT_TEMPLATE" => ".default",
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_ID#/",
+			"element" => "#SECTION_ID#/#ELEMENT_ID#/",
+			"compare" => "",
+			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
